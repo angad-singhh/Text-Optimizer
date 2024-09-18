@@ -21,7 +21,7 @@ The Language Optimizer API is a FastAPI-based application that provides function
   ```json
   {
     "Status": 200,
-    "Supported languages": // list of all supported languages
+    "Supported languages": "str" // list of all supported languages
   }
   ```
 
@@ -32,9 +32,9 @@ The Language Optimizer API is a FastAPI-based application that provides function
 **Request Body** :
   ```json
   {
-    "text": str // text you wan to convert
-    "language": str = "en" // desired language
-    "speed": str = "slow"
+    "text": "str" // text you wan to convert
+    "language": "str" // desired language
+    "speed": "str" 
   }
   ```
 <br>
@@ -49,7 +49,7 @@ The Language Optimizer API is a FastAPI-based application that provides function
   ```json
   {
     "Status": 200,
-    "Supported languages": // list of all supported languages
+    "Supported languages": "list[str]" // list of all supported languages
   }
   ```
 **Response** : Audio file in MP3 format
@@ -62,9 +62,9 @@ The Language Optimizer API is a FastAPI-based application that provides function
 **Request Body** :
   ```json
   {
-    input_text: str = "" 
-    translation_language: str // language in which you want translation
-    input_language: str = "auto" // language of input text [Optional]
+    "input_text": "str"
+    "translation_language": "str" // language in which you want translation
+    "input_language": "str" // language of input text [Optional]
   }
 ```
 **Response** : Translated text in JSON 
