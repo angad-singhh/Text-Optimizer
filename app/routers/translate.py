@@ -1,7 +1,6 @@
 from fastapi import APIRouter
-from fastapi.encoders import jsonable_encoder
 import requests
-from ..models.text import Text
+from ..models.models import Text
 from dotenv import load_dotenv
 import os
 
@@ -12,7 +11,7 @@ uri = os.getenv("X-RAPIDAPI-KEY")
 if not uri:
     raise ValueError("Please check your API key")
 
-router = APIRouter()
+router = APIRouter(prefix="/translation", tags=["Language Transalation"])
 
 
 @router.get("/languages")
